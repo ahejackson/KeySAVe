@@ -216,6 +216,54 @@ class PkmListHandlebars extends PureComponent {
         return new handlebars.SafeString(eval(expr));
         /* eslint-enable no-eval */
       },
+
+      htIvHp() {
+        return this.htHp ? '31' : this.ivHp;
+      },
+      htIvAtk() {
+        return this.htAtk ? '31' : this.ivAtk;
+      },
+      htIvDef() {
+        return this.htDef ? '31' : this.ivDef;
+      },
+      htIvSpAtk() {
+        return this.htSpAtk ? '31' : this.ivSpAtk;
+      },
+      htIvSpDef() {
+        return this.htSpDef ? '31' : this.ivSpDef;
+      },
+      htIvSpe() {
+        return this.htSpe ? '31' : this.ivSpe;
+      },
+
+      markingValues() {
+        if (this.version === 6) {
+          return (
+            (this.markings & 0x01 ? '1' : '0') +
+            ',' +
+            (this.markings & 0x02 ? '1' : '0') +
+            ',' +
+            (this.markings & 0x04 ? '1' : '0') +
+            ',' +
+            (this.markings & 0x08 ? '1' : '0') +
+            ',' +
+            (this.markings & 0x10 ? '1' : '0') +
+            ',' +
+            (this.markings & 0x20 ? '1' : '0')
+          );
+        }
+
+        let res = '';
+        for (let i = 0; i < 6; ++i) {
+          const markVal = (this.markings >>> (i << 1)) & 3;
+          res += markVal;
+
+          if (i < 6 - 1) {
+            res += ',';
+          }
+        }
+        return new handlebars.SafeString(res);
+      },
     };
   }
 

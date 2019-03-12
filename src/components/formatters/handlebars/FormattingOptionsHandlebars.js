@@ -291,6 +291,25 @@ export default class FormattingOptionsHandlebars extends React.Component {
               eval(expr) {
                 return `'${expr}'`;
               },
+
+              htIvHp() {
+                return 'HT HP';
+              },
+              htIvAtk() {
+                return 'HT ATK';
+              },
+              htIvDef() {
+                return 'HT DEF';
+              },
+              htIvSpAtk() {
+                return 'HT SPATK';
+              },
+              htIvSpDef() {
+                return 'HT SPDEF';
+              },
+              htIvSpe() {
+                return 'HT SPE';
+              },
             },
           }
         ),

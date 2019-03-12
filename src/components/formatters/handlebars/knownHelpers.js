@@ -150,5 +150,14 @@ export const knownHelpersPokemon = {
   toJson: true,
   eval: true,
 
+  htIvHp: true,
+  htIvAtk: true,
+  htIvDef: true,
+  htIvSpAtk: true,
+  htIvSpDef: true,
+  htIvSpe: true,
+
+  markingValues: true,
+
   ...knownHelpersBox,
 };
