@@ -267,42 +267,42 @@ class PkmListHandlebars extends PureComponent {
 
       markingValueCircle() {
         if (this.version === 6) {
-          return this.markings & 0x01;
+          return this.markings & 0x01 ? '1' : '0';
         }
         return (this.markings >>> (0 << 1)) & 3;
       },
 
       markingValueTriangle() {
         if (this.version === 6) {
-          return this.markings & 0x02;
+          return this.markings & 0x02 ? '1' : '0';
         }
         return (this.markings >>> (1 << 1)) & 3;
       },
 
       markingValueSquare() {
         if (this.version === 6) {
-          return this.markings & 0x04;
+          return this.markings & 0x04 ? '1' : '0';
         }
         return (this.markings >>> (2 << 1)) & 3;
       },
 
       markingValueHeart() {
         if (this.version === 6) {
-          return this.markings & 0x08;
+          return this.markings & 0x08 ? '1' : '0';
         }
         return (this.markings >>> (3 << 1)) & 3;
       },
 
       markingValueStar() {
         if (this.version === 6) {
-          return this.markings & 0x10;
+          return this.markings & 0x10 ? '1' : '0';
         }
         return (this.markings >>> (4 << 1)) & 3;
       },
 
       markingValueDiamond() {
         if (this.version === 6) {
-          return this.markings & 0x20;
+          return this.markings & 0x20 ? '1' : '0';
         }
         return (this.markings >>> (5 << 1)) & 3;
       },

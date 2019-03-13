@@ -26,7 +26,8 @@
     "no-confusing-arrow": 0,
     "global-require": 0,
     "prefer-template": 0,
-    "import/no-unresolved": [2, { ignore: ['^electron$'] }]
+    "import/no-unresolved": [2, { "ignore": ['^electron$'] }],
+    "no-bitwise": 0
   },
   "plugins": [
     "react"
