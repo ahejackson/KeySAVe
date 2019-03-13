@@ -158,6 +158,12 @@ export const knownHelpersPokemon = {
   htIvSpe: true,
 
   markingValues: true,
+  markingValueCircle: true,
+  markingValueTriangle: true,
+  markingValueSquare: true,
+  markingValueHeart: true,
+  markingValueStar: true,
+  markingValueDiamond: true,
 
   ...knownHelpersBox,
 };
