@@ -19,6 +19,8 @@ export const SET_SHINIES_ONLY = 'SET_SHINIES_ONLY';
 export const SET_SHINY_OVERRIDE = 'SET_SHINY_OVERRIDE';
 export const SET_EGGS_HAVE_MY_SV = 'SET_EGGS_HAVE_MY_SV';
 export const SET_EGGS_HAVE_SVS = 'SET_EGGS_HAVE_SVS';
+export const SET_ORG_MOVES_PP_MAX = 'SET_ORG_MOVES_PP_MAX';
+export const SET_ORG_MARKINGS_CORRECT = 'SET_ORG_MARKINGS_CORRECT';
 export const SET_CUSTOM_FILTER = 'SET_CUSTOM_FILTER';
 
 export const setFilterBv = createAction(SET_FILTER_BV);
@@ -48,4 +50,6 @@ export const setShiniesOnly = createAction(SET_SHINIES_ONLY);
 export const setShinyOverride = createAction(SET_SHINY_OVERRIDE);
 export const setEggsHaveMySv = createAction(SET_EGGS_HAVE_MY_SV);
 export const setEggsHaveSvs = createAction(SET_EGGS_HAVE_SVS);
+export const setOrgMovesPPMax = createAction(SET_ORG_MOVES_PP_MAX);
+export const setOrgMarkingsCorrect = createAction(SET_ORG_MARKINGS_CORRECT);
 export const setCustomFilter = createAction(SET_CUSTOM_FILTER);

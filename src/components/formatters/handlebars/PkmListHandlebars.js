@@ -67,7 +67,6 @@ class PkmListHandlebars extends PureComponent {
         return !!(forms && forms[this.form]);
       },
       formName() {
-        const local = local;
         const forms = this.version === 6 ? local.forms6 : local.forms7;
         return forms[this.species] ? forms[this.species][this.form] : '';
       },
@@ -305,6 +304,40 @@ class PkmListHandlebars extends PureComponent {
           return this.markings & 0x20 ? '1' : '0';
         }
         return (this.markings >>> (5 << 1)) & 3;
+      },
+
+      validateMarkings() {
+        if (this.version === 6) {
+          if (
+            (this.ivHp === 31) === ((this.markings & 0x01) === 0x01) &&
+            (this.ivAtk === 31) === ((this.markings & 0x02) === 0x02) &&
+            (this.ivDef === 31) === ((this.markings & 0x04) === 0x04) &&
+            (this.ivSpAtk === 31) === ((this.markings & 0x08) === 0x08) &&
+            (this.ivSpDef === 31) === ((this.markings & 0x10) === 0x10) &&
+            (this.ivSpe === 31) === ((this.markings & 0x20) === 0x20)
+          ) {
+            return 'Valid Markings';
+          }
+          return 'Not Valid';
+        }
+
+        if (
+          (this.ivHp === 31) === (((this.markings >>> (0 << 1)) & 3) === 1) &&
+          (this.ivAtk === 31) === (((this.markings >>> (1 << 1)) & 3) === 1) &&
+          (this.ivDef === 31) === (((this.markings >>> (2 << 1)) & 3) === 1) &&
+          (this.ivSpAtk === 31) === (((this.markings >>> (3 << 1)) & 3) === 1) &&
+          (this.ivSpDef === 31) === (((this.markings >>> (4 << 1)) & 3) === 1) &&
+          (this.ivSpe === 31) === (((this.markings >>> (5 << 1)) & 3) === 1) &&
+          this.htHp === (((this.markings >>> (0 << 1)) & 3) === 2) &&
+          this.htAtk === (((this.markings >>> (1 << 1)) & 3) === 2) &&
+          this.htDef === (((this.markings >>> (2 << 1)) & 3) === 2) &&
+          this.htSpAtk === (((this.markings >>> (3 << 1)) & 3) === 2) &&
+          this.htSpDef === (((this.markings >>> (4 << 1)) & 3) === 2) &&
+          this.htSpe === (((this.markings >>> (5 << 1)) & 3) === 2)
+        ) {
+          return 'Valid Markings';
+        }
+        return 'Not Valid';
       },
     };
   }

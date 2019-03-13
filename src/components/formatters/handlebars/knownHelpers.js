@@ -165,5 +165,7 @@ export const knownHelpersPokemon = {
   markingValueStar: true,
   markingValueDiamond: true,
 
+  validateMarkings: true,
+
   ...knownHelpersBox,
 };

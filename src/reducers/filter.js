@@ -19,6 +19,8 @@ import {
   SET_SHINY_OVERRIDE,
   SET_EGGS_HAVE_MY_SV,
   SET_EGGS_HAVE_SVS,
+  SET_ORG_MOVES_PP_MAX,
+  SET_ORG_MARKINGS_CORRECT,
   SET_CUSTOM_FILTER,
 } from '../actions/filter';
 import { Localization } from 'keysavcore';
@@ -64,6 +66,8 @@ const initialFilter = {
   shinyOverride: false,
   eggsHaveMySv: false,
   svs: '',
+  orgMovesPPMax: false,
+  orgMarkingsCorrect: false,
   customFilter: undefined,
   customFilterRaw: '',
 };
@@ -193,6 +197,18 @@ export default handleActions(
       return {
         ...state,
         svs: payload,
+      };
+    },
+    [SET_ORG_MOVES_PP_MAX](state, { payload }) {
+      return {
+        ...state,
+        orgMovesPPMax: payload,
+      };
+    },
+    [SET_ORG_MARKINGS_CORRECT](state, { payload }) {
+      return {
+        ...state,
+        orgMarkingsCorrect: payload,
       };
     },
     [SET_CUSTOM_FILTER](state, { payload }) {

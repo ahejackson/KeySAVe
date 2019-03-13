@@ -35,6 +35,8 @@ export default class Filters extends React.Component {
     shinyOverride: PropTypes.bool.isRequired,
     eggsHaveMySv: PropTypes.bool.isRequired,
     svs: PropTypes.string.isRequired,
+    orgMovesPPMax: PropTypes.bool.isRequired,
+    orgMarkingsCorrect: PropTypes.bool.isRequired,
     customFilter: PropTypes.func,
     customFilterRaw: PropTypes.string.isRequired,
 
@@ -55,6 +57,8 @@ export default class Filters extends React.Component {
     setShinyOverride: PropTypes.func.isRequired,
     setEggsHaveMySv: PropTypes.func.isRequired,
     setEggsHaveSvs: PropTypes.func.isRequired,
+    setOrgMovesPPMax: PropTypes.func.isRequired,
+    setOrgMarkingsCorrect: PropTypes.func.isRequired,
     setCustomFilter: PropTypes.func.isRequired,
   };
 
@@ -86,6 +90,9 @@ export default class Filters extends React.Component {
 
   setEggsHaveMySv = (e, v) => this.props.setEggsHaveMySv(v);
   setEggsHaveSvs = e => this.props.setEggsHaveSvs(e.target.value);
+
+  setOrgMovesPPMax = (e, v) => this.props.setOrgMovesPPMax(v);
+  setOrgMarkingsCorrect = (e, v) => this.props.setOrgMarkingsCorrect(v);
 
   setCustomFilterRaw = e => {
     this.setState({ customFilterRaw: e.target.value });
@@ -152,6 +159,8 @@ export default class Filters extends React.Component {
       shinyOverride,
       eggsHaveMySv,
       svs,
+      orgMarkingsCorrect,
+      orgMovesPPMax,
       customFilter,
 
       toggleFilters,
@@ -269,6 +278,17 @@ export default class Filters extends React.Component {
                 floatingLabelText="any of these SVs"
                 value={svs}
                 onChange={this.setEggsHaveSvs}
+              />
+              <p>Organisation</p>
+              <CheckBox
+                label="Moves Not PP Maxed"
+                checked={orgMovesPPMax}
+                onCheck={this.setOrgMovesPPMax}
+              />
+              <CheckBox
+                label="Markings Not Correct"
+                checked={orgMarkingsCorrect}
+                onCheck={this.setOrgMarkingsCorrect}
               />
               <TextField
                 floatingLabelText="Custom Filter"
