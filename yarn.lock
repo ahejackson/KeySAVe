@@ -3885,9 +3885,11 @@ keycode@^2.1.7, keycode@^2.1.8:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.1.9.tgz#964a23c54e4889405b4861a5c9f0480d45141dfa"
 
-keysavcore@0.22.0-alpha.2:
-  version "0.22.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/keysavcore/-/keysavcore-0.22.0-alpha.2.tgz#5cb53b1223c2ab40455e87779dbd095b7dd96c93"
+keysavcore@/Users/adamjackson/Dev/pokemon/KeySavCoreJS:
+  version "0.22.0-alpha.3"
+
+"keysavcore@file:../KeySavCoreJS":
+  version "0.22.0-alpha.3"
 
 killable@^1.0.0:
   version "1.0.0"

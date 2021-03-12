@@ -37,6 +37,7 @@ export default class Filters extends React.Component {
     svs: PropTypes.string.isRequired,
     orgMovesPPMax: PropTypes.bool.isRequired,
     orgMarkingsCorrect: PropTypes.bool.isRequired,
+    orgMarkingsCorrectG8: PropTypes.bool.isRequired,
     customFilter: PropTypes.func,
     customFilterRaw: PropTypes.string.isRequired,
 
@@ -59,6 +60,7 @@ export default class Filters extends React.Component {
     setEggsHaveSvs: PropTypes.func.isRequired,
     setOrgMovesPPMax: PropTypes.func.isRequired,
     setOrgMarkingsCorrect: PropTypes.func.isRequired,
+    setOrgMarkingsCorrectG8: PropTypes.func.isRequired,
     setCustomFilter: PropTypes.func.isRequired,
   };
 
@@ -93,6 +95,7 @@ export default class Filters extends React.Component {
 
   setOrgMovesPPMax = (e, v) => this.props.setOrgMovesPPMax(v);
   setOrgMarkingsCorrect = (e, v) => this.props.setOrgMarkingsCorrect(v);
+  setOrgMarkingsCorrectG8 = (e, v) => this.props.setOrgMarkingsCorrectG8(v);
 
   setCustomFilterRaw = e => {
     this.setState({ customFilterRaw: e.target.value });
@@ -160,6 +163,7 @@ export default class Filters extends React.Component {
       eggsHaveMySv,
       svs,
       orgMarkingsCorrect,
+      orgMarkingsCorrectG8,
       orgMovesPPMax,
       customFilter,
 
@@ -289,6 +293,11 @@ export default class Filters extends React.Component {
                 label="Markings Not Correct"
                 checked={orgMarkingsCorrect}
                 onCheck={this.setOrgMarkingsCorrect}
+              />
+              <CheckBox
+                label="Markings Not Correct (G8)"
+                checked={orgMarkingsCorrectG8}
+                onCheck={this.setOrgMarkingsCorrectG8}
               />
               <TextField
                 floatingLabelText="Custom Filter"

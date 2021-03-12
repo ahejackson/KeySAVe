@@ -21,6 +21,7 @@ import {
   SET_EGGS_HAVE_SVS,
   SET_ORG_MOVES_PP_MAX,
   SET_ORG_MARKINGS_CORRECT,
+  SET_ORG_MARKINGS_CORRECT_G8,
   SET_CUSTOM_FILTER,
 } from '../actions/filter';
 import { Localization } from 'keysavcore';
@@ -68,6 +69,7 @@ const initialFilter = {
   svs: '',
   orgMovesPPMax: false,
   orgMarkingsCorrect: false,
+  orgMarkingsCorrectG8: false,
   customFilter: undefined,
   customFilterRaw: '',
 };
@@ -209,6 +211,12 @@ export default handleActions(
       return {
         ...state,
         orgMarkingsCorrect: payload,
+      };
+    },
+    [SET_ORG_MARKINGS_CORRECT_G8](state, { payload }) {
+      return {
+        ...state,
+        orgMarkingsCorrectG8: payload,
       };
     },
     [SET_CUSTOM_FILTER](state, { payload }) {
