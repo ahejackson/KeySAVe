@@ -161,12 +161,12 @@ const getFilter = createSelector(
           (pkm.htSpAtk || pkm.ivSpAtk === 31) === (((pkm.markings >>> (3 << 1)) & 3) === 1) &&
           (pkm.htSpDef || pkm.ivSpDef === 31) === (((pkm.markings >>> (4 << 1)) & 3) === 1) &&
           (pkm.htSpe || pkm.ivSpe === 31) === (((pkm.markings >>> (5 << 1)) & 3) === 1) &&
-          (pkm.ivHp === 0) === (((pkm.markings >>> (0 << 1)) & 3) === 2) &&
-          (pkm.ivAtk === 0) === (((pkm.markings >>> (1 << 1)) & 3) === 2) &&
-          (pkm.ivDef === 0) === (((pkm.markings >>> (2 << 1)) & 3) === 2) &&
-          (pkm.ivSpAtk === 0) === (((pkm.markings >>> (3 << 1)) & 3) === 2) &&
-          (pkm.ivSpDef === 0) === (((pkm.markings >>> (4 << 1)) & 3) === 2) &&
-          (pkm.ivSpe === 0) === (((pkm.markings >>> (5 << 1)) & 3) === 2)
+          (!pkm.htHp && pkm.ivHp === 0) === (((pkm.markings >>> (0 << 1)) & 3) === 2) &&
+          (!pkm.htAtk && pkm.ivAtk === 0) === (((pkm.markings >>> (1 << 1)) & 3) === 2) &&
+          (!pkm.htDef && pkm.ivDef === 0) === (((pkm.markings >>> (2 << 1)) & 3) === 2) &&
+          (!pkm.htSpAtk && pkm.ivSpAtk === 0) === (((pkm.markings >>> (3 << 1)) & 3) === 2) &&
+          (!pkm.htSpDef && pkm.ivSpDef === 0) === (((pkm.markings >>> (4 << 1)) & 3) === 2) &&
+          (!pkm.htSpe && pkm.ivSpe === 0) === (((pkm.markings >>> (5 << 1)) & 3) === 2)
         ) {
           return false;
         }
